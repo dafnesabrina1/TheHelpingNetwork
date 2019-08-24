@@ -1,9 +1,13 @@
+// Libraries
 import React from 'react';
+
+// Styles
+import { SectionHeader } from './heroSection.style';
 
 const HeroSection = () => {
   return (
     <div>
-      <h1>This is the hero section</h1>
+      <SectionHeader>This is the hero section</SectionHeader>
     </div>
   );
 };
