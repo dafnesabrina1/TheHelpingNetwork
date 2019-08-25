@@ -1,5 +1,6 @@
 // Libraries
-import React from 'react';
+import React, { useEffect, Component } from 'react';
+import axios from 'axios';
 
 // Styles
 import SectionContainer, { SectionHeader } from '../../../style';
@@ -8,19 +9,19 @@ import { Grid, Left, Right, EventImage } from './heroSection.style';
 import VolunteersListSection from '../VolunteersListSection';
 import heroIMG from '../../../assets/heroIMG_v2.jpg';
 
-const HeroSection = () => {
+const HeroSection = ({ data }) => {
   return (
     <SectionContainer>
       <Grid>
         <Left>
           <SectionHeader isFancy shorterWidth withMarginBottom>
-            Help recolect trash for North East Beach
+            {data.payload.properties.name}
           </SectionHeader>
           <Button noMargin>I'M IN</Button>
           <VolunteersListSection />
         </Left>
         <Right>
-          <EventImage img={heroIMG}></EventImage>
+          <EventImage img={data.payload.properties.image}></EventImage>
         </Right>
       </Grid>
     </SectionContainer>

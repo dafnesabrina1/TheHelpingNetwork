@@ -14,6 +14,7 @@ export const QuestionTitle = styled.h1`
 export const QuestionDesc = styled.p`
   font-size: 1.05rem;
 
+  word-wrap: break-word;
   max-width: 35rem;
 `;
 

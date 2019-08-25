@@ -10,6 +10,7 @@ import VolunteerLogin from './pages/VolunteerLogin';
 import Events from './pages/Events';
 import Event from './pages/Event';
 import FacebookLogin from './pages/FacebookLogin';
+import OrganizationForm from './pages/OrganizationForm';
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
             path='/fbLogin'
             render={({ history }) => <FacebookLogin history={history} />}
           />
+
+          <Route exact path='/organization/form' component={OrganizationForm} />
 
           <Route exact path='/events' component={Events} />
           <Route exact path='/event/id' component={Event} />
