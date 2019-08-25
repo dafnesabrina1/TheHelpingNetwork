@@ -5,7 +5,7 @@ export const ExternalButton = styled.a`
   outline: none;
   border: none;
 
-  border-radius: 8px;
+  border-radius: 5px;
   border: 1px solid var(--color-main);
   background-color: ${props =>
     props.inverted ? 'var(--color-white)' : 'var(--color-main)'};
@@ -40,7 +40,7 @@ export const InternalButton = styled.button`
   outline: none;
   border: none;
 
-  border-radius: 8px;
+  border-radius: 5px;
   border: 1px solid var(--color-main);
 
   background-color: ${props =>

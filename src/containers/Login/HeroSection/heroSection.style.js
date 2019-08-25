@@ -5,6 +5,8 @@ export const SectionHeader = styled.h1`
   font-size: 4.3rem;
 
   line-height: 1.3;
+
+  margin-bottom: ${props => (props.withBottomMargin ? '1rem' : '0')};
 `;
 
 export const SectionDescription = styled.p`
