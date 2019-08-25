@@ -1,5 +1,6 @@
 // Libraries
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Styles
 import { CustomHighlight } from '../../../style';
@@ -14,7 +15,11 @@ const VolunteerLogin = () => {
     <CustomSectionContainer>
       <SectionHeader>
         Enter as a <CustomHighlight>Volunteer</CustomHighlight>
-        <FacebookButton>Ingresar con Facebook</FacebookButton>
+        <FacebookButton>
+          <Link to='/fbLogin' style={{ color: 'white' }}>
+            Ingresar con Facebook
+          </Link>
+        </FacebookButton>
       </SectionHeader>
     </CustomSectionContainer>
   );
