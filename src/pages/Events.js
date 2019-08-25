@@ -2,12 +2,15 @@
 import React from 'react';
 
 // Styles
-import EventCard from '../containers/Events/EventCard';
+import EventCategory from '../containers/Events/EventCategory';
 
 const Events = () => {
   return (
     <div>
-      <EventCard />
+        <EventCategory/>
+        <EventCategory/>
+        <EventCategory/>
+        <EventCategory/>
     </div>
   );
 };
