@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 // Styles
-import {
+import CustomSectionContainer, {
   SectionHeader,
   SectionDescription,
   Grid,
@@ -11,6 +11,7 @@ import {
 } from './heroSection.style';
 import SectionContainer, { CustomHighlight } from '../../../style';
 import Button from '../../../layout/components/Button';
+import heroIMG from '../../../assets/heroIMG_v2.jpg';
 
 const HeroSection = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -18,25 +19,24 @@ const HeroSection = () => {
   return (
     <div>
       <Grid>
-        <Left>
-          <SectionContainer extraPadding>
-            <SectionHeader withBottomMargin>
-              The <CustomHighlight>Helping</CustomHighlight> Network
-            </SectionHeader>
-            <SectionDescription bottomSpacing>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum.
-            </SectionDescription>
-            <Button to='/login/volunteer' noMargin>
-              Voluntario
-            </Button>
-            <Button to='/login/organization' inverted>
-              Organizador
-            </Button>
-          </SectionContainer>
-        </Left>
-        <Right>
-          <p>right</p>
-        </Right>
+        <CustomSectionContainer extraPadding>
+          <SectionHeader withBottomMargin>
+            The <CustomHighlight>Helping</CustomHighlight> Network
+          </SectionHeader>
+          <SectionDescription bottomSpacing>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+            asperiores neque, vel veritatis, nam aspernatur.
+          </SectionDescription>
+          <Button to='/login/volunteer' noMargin>
+            Voluntario
+          </Button>
+          <Button to='/login/organization' inverted>
+            Organizador
+          </Button>
+        </CustomSectionContainer>
+
+        <Left></Left>
+        <Right img={heroIMG} />
       </Grid>
     </div>
   );

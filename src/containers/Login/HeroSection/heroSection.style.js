@@ -1,4 +1,15 @@
 import styled from 'styled-components';
+import SectionContainer from '../../../style';
+
+const CustomSectionContainer = styled(SectionContainer)`
+  position: absolute;
+  left: 5rem;
+
+  max-width: 40rem;
+  background-color: var(--color-white);
+
+  margin: 7rem auto 5rem auto;
+`;
 
 export const SectionHeader = styled.h1`
   font-family: 'DM Serif Text', serif;
@@ -17,9 +28,15 @@ export const SectionDescription = styled.p`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 25% 75%;
+
+  height: 100vh;
 `;
 
 export const Left = styled.div``;
 
-export const Right = styled.div``;
+export const Right = styled.div`
+  background: black url(${props => props.img}) center/cover;
+`;
+
+export default CustomSectionContainer;
