@@ -2,12 +2,17 @@
 import React from 'react';
 
 // Styles
-import { ExternalButton, InternalButton, InternalLink } from './button.style';
+import CustomButton, {
+  ExternalButton,
+  InternalButton,
+  InternalLink
+} from './button.style';
 
 const Button = ({
   children,
   noMargin,
   hasExternalLink,
+  hasInternalLink,
   to,
   href,
   inverted
@@ -18,13 +23,19 @@ const Button = ({
         {children}
       </ExternalButton>
     );
-  } else {
+  } else if (hasInternalLink) {
     return (
       <InternalButton noMargin={noMargin} inverted={inverted}>
         <InternalLink to={`${to}`} inverted={inverted}>
           {children}
         </InternalLink>
       </InternalButton>
+    );
+  } else {
+    return (
+      <CustomButton noMargin={noMargin} inverted={inverted}>
+        {children}
+      </CustomButton>
     );
   }
 };
