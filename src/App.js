@@ -29,7 +29,7 @@ function App() {
           <Route exact path='/organization/form' component={OrganizationForm} />
 
           <Route exact path='/events' component={Events} />
-          <Route exact path='/event/id' component={Event} />
+          <Route exact path='/event/:id' component={Event} />
         </Switch>
       </BrowserRouter>
     </Provider>

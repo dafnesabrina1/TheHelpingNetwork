@@ -14,8 +14,9 @@ class Event extends Component {
   };
 
   componentDidMount() {
+    console.log(this.props.match);
     axios
-      .get(`http://localhost:4000/event/1`)
+      .get(`http://localhost:4000/event/${this.props.match.params.id}`)
       .then(res => {
         this.setState({ data: res.data });
         console.log(this.state.data);
@@ -30,19 +31,19 @@ class Event extends Component {
             console.log(this.state.companyData.properties);
 
             axios
-          .get(`http://localhost:4000/event/1/participants`)
-          .then(thirdRes => {
-            this.setState({ participants: thirdRes.data });
+              .get(
+                `http://localhost:4000/event/${this.props.match.params.id}/participants`
+              )
+              .then(thirdRes => {
+                this.setState({ participants: thirdRes.data });
 
-            console.log(this.state.participants);
+                console.log(this.state.participants);
+              });
+          })
+          .catch(e => {
+            console.log(e);
           });
-      })
-      .catch(e => {
-        console.log(e);
       });
-          });
-
-        
   }
 
   render() {

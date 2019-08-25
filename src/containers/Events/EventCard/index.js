@@ -1,41 +1,67 @@
-import React from 'react';
-import { 
-    CardImage, 
-    CardInfo,
-    CardTitle,
-    Flex,
-    FlexSpaceBetweenTop,
-    FlexSpaceBetweenBottom,
-    CardUserImage,
-    CardUserName,
-    EventCardContainer, 
-    ProgressInfo } from './eventCard.style';
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
+import {
+  CardImage,
+  CardInfo,
+  CardTitle,
+  Flex,
+  FlexSpaceBetweenTop,
+  FlexSpaceBetweenBottom,
+  CardUserImage,
+  CardUserName,
+  EventCardContainer,
+  ProgressInfo
+} from './eventCard.style';
 import { Line } from 'rc-progress';
 
-const EventCard = () => {
-  return (
-    <EventCardContainer>
-      <CardImage img="http://mxcity.mx/wp-content/uploads/2017/09/Topos-naranjas-.jpg"/>
-      <CardInfo>
-          <CardTitle>HELLO my name is Dafne, hah ahdgjhf hjgavcbjf vb vbifcjfcbsvx yugcvjbc v dc niudgvhs xcniusvx csx</CardTitle>
-          <Flex>
-            <CardUserImage img="https://upload.wikimedia.org/wikipedia/commons/2/2c/Diego_lainez_2.jpg"/>
-            <CardUserName>Erick Solorio</CardUserName>
-          </Flex>
-      </CardInfo>
-      <ProgressInfo>
+class EventCard extends Component {
+  state = {
+    participants: ''
+  };
+
+  componentDidMount() {
+    axios
+      .get(
+        `http://localhost:4000/ngo/${this.props.event.properties.organizer_id}`
+      )
+      .then(secondRes => {
+        this.setState({ companyData: secondRes.data });
+
+        axios
+          .get(
+            `http://localhost:4000/event/${this.props.event.identity}/participants`
+          )
+          .then(thirdRes => {
+            this.setState({ participants: thirdRes.data });
+          });
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  }
+
+  render() {
+    return (
+      <EventCardContainer>
+        {console.log(this.props.event)}
+
+        <CardImage img={this.props.event.properties.image} />
+        <CardInfo>
+          <CardTitle>{this.props.event.properties.name}</CardTitle>
+        </CardInfo>
+        <ProgressInfo>
           <FlexSpaceBetweenTop>
-          <div>200 Volunteers</div>
-          <div>12</div>
+            <div>0 Volunteers</div>
           </FlexSpaceBetweenTop>
           <FlexSpaceBetweenBottom>
-          <div>of 300 Volunteers</div>
-          <div>days left</div>
+            <div>of {this.props.event.properties.capacity} Volunteers</div>
           </FlexSpaceBetweenBottom>
-          <Line percent="40" strokeWidth="2" strokeColor="red" trailWidth="2" />
-      </ProgressInfo>
-    </EventCardContainer>
-  );
-};
+          <Line percent='0' strokeWidth='2' strokeColor='red' trailWidth='2' />
+        </ProgressInfo>
+      </EventCardContainer>
+    );
+  }
+}
 
 export default EventCard;

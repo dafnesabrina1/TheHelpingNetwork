@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import useInputState from '../hooks/useInputState';
 import axios from 'axios';
@@ -12,6 +13,7 @@ const OrganizationForm = () => {
   const [expect, onExpectChange, resetExpect] = useInputState('');
   const [help, onHelpChange, resetHelp] = useInputState('');
   const [img, onImgChange, resetImg] = useInputState('');
+  const [orgId, onIdChange, resetOrgId] = useInputState('');
 
   const handleClick = () => {
     axios
@@ -22,7 +24,7 @@ const OrganizationForm = () => {
         p2: expect,
         p3: help,
         imageUrl: img,
-        ngo_id: '0'
+        ngo_id: orgId
       })
       .then(result => {});
 
@@ -33,6 +35,7 @@ const OrganizationForm = () => {
     resetExpect();
     resetHelp();
     resetImg();
+    resetOrgId();
   };
 
   return (
@@ -77,13 +80,20 @@ const OrganizationForm = () => {
           <CustomInput type='text' value={img} onChange={onImgChange} />
         </div>
 
+        <div style={{ marginBottom: '0.8rem' }}>
+          <h3 style={{ marginBottom: '0.5rem' }}>
+            NGO The Helping Network Key
+          </h3>
+          <CustomInput type='text' value={orgId} onChange={onIdChange} />
+        </div>
+
         <CustomButton onClick={() => handleClick()}>SUBMIT</CustomButton>
       </SectionForm>
     </div>
   );
 };
 
-export default OrganizationForm;
+export default withRouter(OrganizationForm);
 
 const CustomButton = styled.div`
   max-width: 15rem;
@@ -123,7 +133,7 @@ const CustomInput = styled.input`
 
 const SectionForm = styled.div`
   background-color: var(--color-white);
-  height: 45rem;
+  height: 52rem;
 
   margin-bottom: 10rem;
 
