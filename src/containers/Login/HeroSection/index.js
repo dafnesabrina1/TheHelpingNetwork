@@ -1,5 +1,5 @@
 // Libraries
-import React, { useState } from 'react';
+import React from 'react';
 
 // Styles
 import CustomSectionContainer, {
@@ -9,7 +9,7 @@ import CustomSectionContainer, {
   Left,
   Right
 } from './heroSection.style';
-import SectionContainer, { CustomHighlight } from '../../../style';
+import { CustomHighlight } from '../../../style';
 import Button from '../../../layout/components/Button';
 import heroIMG from '../../../assets/heroIMG_v2.jpg';
 

@@ -8,6 +8,7 @@ import CustomSectionContainer, {
   FacebookButton
 } from './loginSection.style';
 
+// TODO: Mejorar el UI de este componente
 const VolunteerLogin = () => {
   return (
     <CustomSectionContainer>
