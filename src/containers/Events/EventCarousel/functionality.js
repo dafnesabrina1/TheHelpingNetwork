@@ -77,7 +77,7 @@ $(document).ready(function () {
         var divStyle = $(el + ' ' + itemsDiv).css('transform');
         var values = divStyle.match(/-?[\d\.]+/g);
         var xds = Math.abs(values[4]);
-        if (e == 0) {
+        if (e === 0) {
             translateXval = parseInt(xds) - parseInt(itemWidth * s);
             $(el + ' ' + rightBtn).removeClass("over");
 
@@ -86,7 +86,7 @@ $(document).ready(function () {
                 $(el + ' ' + leftBtn).addClass("over");
             }
         }
-        else if (e == 1) {
+        else if (e === 1) {
             var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
             translateXval = parseInt(xds) + parseInt(itemWidth * s);
             $(el + ' ' + leftBtn).removeClass("over");

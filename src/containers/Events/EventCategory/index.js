@@ -1,6 +1,5 @@
 import React from 'react';
-import { 
-    CategoryTitle, Separator } from './eventCategory.style';
+import { CategoryTitle } from './eventCategory.style';
 import EventCarousel from '../EventCarousel/index';
 
 const EventCategory = () => {

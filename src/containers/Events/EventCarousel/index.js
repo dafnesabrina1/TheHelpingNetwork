@@ -59,8 +59,8 @@ const EventCarousel = () => {
                   <EventCard/>
                 </div>
             </div>
-            <button class="btn btn-danger leftLst"><img class="img-left" src="https://monasteryeventcenter.com/wp-content/uploads/revslider/home/white-down-arrow-png-2.png"/></button>
-            <button class="btn btn-danger rightLst"><img class="img-right" src="https://monasteryeventcenter.com/wp-content/uploads/revslider/home/white-down-arrow-png-2.png"/></button>
+            <button class="btn btn-danger leftLst"><img alt= '' class="img-left" src="https://monasteryeventcenter.com/wp-content/uploads/revslider/home/white-down-arrow-png-2.png"/></button>
+            <button class="btn btn-danger rightLst"><img alt='' class="img-right" src="https://monasteryeventcenter.com/wp-content/uploads/revslider/home/white-down-arrow-png-2.png"/></button>
         </div>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
