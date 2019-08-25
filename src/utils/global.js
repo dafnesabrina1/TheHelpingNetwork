@@ -17,6 +17,7 @@ export default createGlobalStyle`
         color: var(--color-textColor);
 
         /* CSS Variables */
+        --color-main: ${props => props.theme.colors.mainColor};
         --color-hover: ${props => props.theme.colors.hoverColor};
         --color-white: ${props => props.theme.colors.whiteColor};
         --color-dark: ${props => props.theme.colors.darkColor};
@@ -30,7 +31,7 @@ export default createGlobalStyle`
     }
 
     body {
-        font-family: "Arial", sans-serif;
+        font-family: "Lato", sans-serif;
         font-weight: 400;
         line-height: 1.6;
     }
