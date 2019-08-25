@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const CardImage = styled.div`
-    width: 21.4rem;
+    width: 21rem;
     height: 15rem;
     background: white url(${props=> props.img}) center / cover;
 `;
 
 export const CardInfo = styled.div`
-    width: 21.4rem;
+    width: 21rem;
     background-color: white;
     padding: 1rem;
 `;
@@ -57,12 +57,12 @@ export const CardUserName = styled.div`
 export const EventCardContainer = styled.div`
     border-radius: .5rem;
     overflow: hidden;
-    width: fit-content;
+    width: inherit;
     margin: 1rem;
 `;
 
 export const ProgressInfo = styled.div`
-    width: 21.4rem;
+    width: 21rem;
     background-color: #F8FAFB;
     padding: 1rem;
 `;
