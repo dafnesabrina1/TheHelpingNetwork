@@ -3,27 +3,25 @@ import React from 'react';
 
 // Styles
 import SectionContainer, { HeroContainer, SectionHeader } from '../../../style';
-import { Grid, Left, Right, EventInformation } from './heroSection.style';
-import heroIMG from '../../../assets/heroIMG_v2_masked.jpg';
+import Button from '../../../layout/components/Button';
+import { Grid, Left, Right, EventImage } from './heroSection.style';
+import heroIMG from '../../../assets/heroIMG_v2.jpg';
 
 const HeroSection = () => {
   return (
-    <HeroContainer img={heroIMG}>
-      <SectionContainer>
-        <Grid>
-          <Left>
-            <SectionHeader isFancy isWhite withMarginTop>
-              Help recolect trash for North East Beach
-            </SectionHeader>
-          </Left>
-          <Right>
-            <EventInformation>
-              <p>This is the event info</p>
-            </EventInformation>
-          </Right>
-        </Grid>
-      </SectionContainer>
-    </HeroContainer>
+    <SectionContainer>
+      <Grid>
+        <Left>
+          <SectionHeader isFancy shorterWidth withMarginBottom>
+            Help recolect trash for North East Beach
+          </SectionHeader>
+          <Button noMargin>I'M IN</Button>
+        </Left>
+        <Right>
+          <EventImage img={heroIMG}></EventImage>
+        </Right>
+      </Grid>
+    </SectionContainer>
   );
 };
 

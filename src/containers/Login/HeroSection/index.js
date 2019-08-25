@@ -28,10 +28,10 @@ const HeroSection = () => {
           <SectionDescription bottomSpacing>
             ¿Cómo quieres ingresar?
           </SectionDescription>
-          <Button to='/login/volunteer' noMargin>
+          <Button to='/login/volunteer' noMargin hasInternalLink>
             Voluntario
           </Button>
-          <Button to='/login/organization' inverted>
+          <Button to='/login/organization' hasInternalLink inverted>
             Organizador
           </Button>
         </CustomSectionContainer>

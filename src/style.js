@@ -28,9 +28,11 @@ export const SectionHeader = styled.h1`
 
   line-height: 1.2;
 
+  margin-bottom: ${props => (props.withMarginBottom ? '1.5rem' : '0')};
+
   color: ${props => (props.isWhite ? 'var(--color-white)' : 'black')};
 
-  margin-top: ${props => (props.withMarginTop ? '1rem' : '0')};
+  max-width: ${props => (props.shorterWidth ? '35rem' : '')};
 `;
 
 export default SectionContainer;
