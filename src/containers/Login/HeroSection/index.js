@@ -14,8 +14,6 @@ import Button from '../../../layout/components/Button';
 import heroIMG from '../../../assets/heroIMG_v2.jpg';
 
 const HeroSection = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
-
   return (
     <div>
       <Grid>
@@ -27,6 +25,9 @@ const HeroSection = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
             asperiores neque, vel veritatis, nam aspernatur.
           </SectionDescription>
+          <SectionDescription bottomSpacing>
+            ¿Cómo quieres ingresar?
+          </SectionDescription>
           <Button to='/login/volunteer' noMargin>
             Voluntario
           </Button>
@@ -34,7 +35,6 @@ const HeroSection = () => {
             Organizador
           </Button>
         </CustomSectionContainer>
-
         <Left></Left>
         <Right img={heroIMG} />
       </Grid>
