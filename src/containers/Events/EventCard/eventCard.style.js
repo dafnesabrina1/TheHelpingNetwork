@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const CardImage = styled.div`
-    width: 20rem;
+    width: 21.4rem;
     height: 15rem;
     background: white url(${props=> props.img}) center / cover;
 `;
 
 export const CardInfo = styled.div`
-    width: 20rem;
+    width: 21.4rem;
     background-color: white;
     padding: 1rem;
 `;
@@ -62,7 +62,7 @@ export const EventCardContainer = styled.div`
 `;
 
 export const ProgressInfo = styled.div`
-    width: 20rem;
+    width: 21.4rem;
     background-color: #F8FAFB;
     padding: 1rem;
 `;
