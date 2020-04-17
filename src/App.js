@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import VolunteerLogin from './pages/VolunteerLogin';
 import Events from './pages/Events';
 import Event from './pages/Event';
+import OrganizationEvent from './pages/OrganizationEvent';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
 
           <Route exact path='/events' component={Events} />
           <Route exact path='/event/id' component={Event} />
+
+          <Route exact path='/organization/events' component={OrganizationEvent}/>
         </Switch>
       </BrowserRouter>
     </>
